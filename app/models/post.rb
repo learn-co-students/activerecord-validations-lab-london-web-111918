@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   def clickbait?
     clickbaits = ["Won't Believe", "Secret", "Top #{/ [0-9]*/}", "Guess"]
     if clickbaits.none? { |clickbait| title.to_s.include?(clickbait) }
-      errors[:messages] = "Must be clickbait"
+      errors[:messages] = "Title must be clickbait"
     end
   end
 end
